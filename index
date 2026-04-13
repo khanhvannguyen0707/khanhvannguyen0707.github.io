@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giới thiệu Beplain</title>
+
+<style>
+body{
+    font-family: Arial;
+    margin:0;
+    padding-top:90px;
+}
+
+/* HEADER */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:white;
+    box-sizing:border-box;
+    z-index:1000;
+}
+
+.logo{
+    text-decoration: none;
+    font-size:28px;
+    font-weight:700;
+    color:black;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+}
+
+nav a:hover{
+    color:#669900;
+}
+
+/* GIỚI THIỆU */
+.about{
+    padding:60px 15%;
+    text-align:center;
+}
+
+.about h1{
+    font-size:40px;
+}
+
+.about p{
+    font-size:18px;
+    color:#555;
+}
+
+/* WHY */
+.why{
+    padding:60px 15%;
+}
+
+.reason{
+    display:flex;
+    justify-content:center;
+    margin-bottom:30px;
+}
+
+.reason img{
+    width:600px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+/* FOOTER */
+footer{
+    background:#e8f2de;
+    text-align:center;
+    padding:20px;
+    margin-top:70px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+}
+
+.footer-col{
+    width:50%;
+}
+
+.toggle{
+    cursor:pointer;
+    color:#669900;
+}
+
+.footer-content{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<a href="#" class="logo">Beplain</a>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Skincare</a>
+<a href="#">Best Seller</a>
+<a href="#">Giới thiệu</a>
+</nav>
+</header>
+
+<!-- ABOUT -->
+<section class="about">
+<h1>GIỚI THIỆU BEPLAIN</h1>
+
+<p>
+Beplain là thương hiệu mỹ phẩm thuần chay đến từ Hàn Quốc,
+tập trung vào chăm sóc da lành tính và hiệu quả.
+</p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+<h2>Vì sao Beplain được yêu thích?</h2>
+
+<div class="reason">
+<img src="Hinhanh/Thành phần.png">
+</div>
+
+<div class="reason">
+<img src="Hinhanh/Thiết kế.png">
+</div>
+
+<div class="reason">
+<img src="Hinhanh/Hiệu quả.png">
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-col">
+<h3 class="toggle">LIÊN HỆ </h3>
+<div class="footer-content">
+<p>Địa chỉ: Vinh, Nghệ An</p>
+<p>Hotline: 0912564937</p>
+<p>Email: bum@gmail.com</p>
+</div>
+</div>
+
+<div class="footer-col">
+<h3 class="toggle">HỖ TRỢ KHÁCH HÀNG </h3>
+<div class="footer-content">
+<p>Giới thiệu</p>
+<p>Hướng dẫn mua hàng</p>
+<p>Chính sách đổi trả</p>
+<p>Chính sách bảo mật</p>
+<p>Điều khoản dịch vụ</p>
+</div>
+</div>
+
+</div>
+
+<p>Copyright 2026 © Beplain.com.vn</p>
+
+</footer>
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    // 1. Fade-in khi load
+    $(".about").hide().fadeIn(1000);
+
+    // 2. Hover zoom ảnh
+    $(".reason img").hover(
+        function(){
+            $(this).css("transform","scale(1.05)");
+        },
+        function(){
+            $(this).css("transform","scale(1)");
+        }
+    );
+
+    // 3. SlideToggle footer
+    $(".toggle").click(function(){
+        $(this).next(".footer-content").slideToggle();
+    });
+
+});
+</script>
+
+</body>
+</html>
